@@ -88,12 +88,11 @@ class AddList extends PureComponent {
         }
 
     handleUpdateTask=(e,todo)=>{
-        let val1 = document.getElementById('update_'+ todo.id).value;
+       let val1 = document.getElementById('update_'+ todo.id).value;
         e.preventDefault();      
-        // counter+=1;
-        counter = todo.id;
+        
         var userId=parseInt(this.props.todoApp.userId,10);
-        this.props.updateTaskList(counter,userId, val1 );
+        this.props.updateTaskList(counter,userId, todo.id );
         this.props.setCheckboxValue("addFlag",false);
         let val = document.getElementById('update_'+ todo.id).value;
         document.getElementById('title_'+ todo.id).innerHTML = val;
